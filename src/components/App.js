@@ -4,6 +4,7 @@ import { Link, Route } from 'react-router-dom';
 import Account from './Account';
 
 import SignIn from './SignIn';
+import ProtectedRoute from '../components/ProtectedRoute';
 
 function App() {
 	return (
@@ -15,7 +16,7 @@ function App() {
 			</nav>
 
 			<Route exact path='/signin' component={SignIn} />
-			<Route exact path='/account' component={Account} />
+			<ProtectedRoute exact path='/account' component={Account} />
 		</div>
 	)
 }
