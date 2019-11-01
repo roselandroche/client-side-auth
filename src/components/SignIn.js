@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import axios from 'axios';
+import api from '../utils/api';
 
 function SignIn(props) {
     const [error, setError] = useState()
@@ -18,8 +18,8 @@ function SignIn(props) {
     const handleSubmit = event => {
         event.preventDefault();
 
-        axios
-            .post('http://localhost:8080/signin', data)
+        api()
+            .post('/signin', data)
             .then(res => {
                 localStorage.setItem('token', res.data.token)
             })
